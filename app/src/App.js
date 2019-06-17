@@ -1,13 +1,11 @@
 import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
-import { Router, Switch, Route, Redirect } from './routing';
+import { Router, Switch, Route, Link } from './routing';
 import { connect } from 'react-redux';
-import { PrivateRoute } from './_components';
 import { history } from './history';
 import { alertActions} from './_actions';
 import { HomePage } from './HomePage';
 import { LoginPage } from './LoginPage';
-import {AsyncStorage} from 'react-native';
 
 export default class App extends React.Component {
     constructor(props) {
@@ -20,11 +18,11 @@ export default class App extends React.Component {
         history.listen((location, action) => {
             // clear alert on location change
             /*dispatch(alertActions.clear());*/
-			/*alertActions.clear();*/
+			alertActions.clear();
         });
     }
-    render() {
-        const { alert } = this.props;
+  render() {
+      /*const { alert } = this.props;*/
         const { user } = this.props;
 		console.log("TYPE_OF: " + typeof user);
 		let authCheck = false;
@@ -38,11 +36,21 @@ export default class App extends React.Component {
         return (
             <View style={styles.container}>
                 <Router history={history}>
-                    <Switch>
-                        <View>
-                            <Route path="/login" component={LoginPage} />
-                            <PrivateRoute exact path="/" component={HomePage} authed={authCheck} />
+                        <View style={styles.nav}>
+                            <View style={styles.navItem}>
+                                <Link to="/" >
+                                    <Text >Home</Text>
+                                </Link>
+                            </View>
+                            <View style={styles.navItem}>
+                                <Link to="/login" >
+                                    <Text >Login</Text>
+                                </Link>
+                            </View>
                         </View>
+                    <Switch>
+                        <Route exact path="/" component={HomePage} />
+                        <Route path="/login" component={LoginPage} />
                     </Switch>
                 </Router>
             </View>
@@ -51,14 +59,30 @@ export default class App extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginTop: 50,
-    padding: 50
-  }
+    container: {
+        marginTop: 25,
+        padding: 10
+    },
+    header: {
+        fontSize: 20
+    },
+    nav: {
+        flexDirection: "row",
+        justifyContent: "space-around"
+    },
+    navItem: {
+        flex: 1,
+        alignItems: "center",
+        padding: 10,
+        backgroundColor: "green"
+    },
+    subNavItem: {
+        padding: 5
+    },
+    topic: {
+        textAlign: "center",
+        fontSize: 15
+    }
 });
 
 function mapStateToProps(state) {
