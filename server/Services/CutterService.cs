@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
+using MySql.Data.MySqlClient;
 using server.Entities;
 using server.Helpers;
 
@@ -36,7 +37,7 @@ namespace server.Services
 
         public Cutter GetByIdSQL(int id)
         {
-            var cutterId = new SqlParameter("@id", id);
+            var cutterId = new MySqlParameter("@id", id);
             var cutter = _context.cutter
                 .FromSql("SELECT * FROM cutter WHERE id = @id", cutterId).FirstOrDefault();
             return cutter;
