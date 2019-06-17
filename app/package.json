@@ -1,0 +1,47 @@
+{
+  "main": "node_modules/expo/AppEntry.js",
+  "scripts": {
+    "start-web": "SKIP_PREFLIGHT_CHECK=true react-scripts start",
+    "build-web": "SKIP_PREFLIGHT_CHECK=true react-scripts build"
+  },
+  "dependencies": {
+    "dotnetify": "^3.3.1",
+    "expo": "^33.0.0",
+    "history": "^4.9.0",
+    "npm": "^6.9.0",
+    "react": "16.8.3",
+    "react-art": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-33.0.0.tar.gz",
+    "react-native-element": "^1.2.1",
+    "react-native-web": "^0.11.4",
+    "react-redux": "^7.0.3",
+    "react-router-dom": "^5.0.1",
+    "react-router-native": "^5.0.1",
+    "react-scripts": "^3.0.1",
+    "redux": "^4.0.1",
+    "redux-actions": "^2.6.5",
+    "redux-logger": "^3.0.6",
+    "redux-promise": "^0.6.0",
+    "redux-thunk": "^2.3.0"
+  },
+  "devDependencies": {
+    "@react-native-community/eslint-config": "^0.0.5",
+    "babel-eslint": "^8.2.1",
+    "babel-preset-expo": "^5.1.1",
+    "eslint": "^5.16.0"
+  },
+  "private": true,
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

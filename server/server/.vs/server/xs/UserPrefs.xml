@@ -1,0 +1,30 @@
+﻿<Properties StartupConfiguration="{4676EC17-E151-422F-B97A-D0831DB60439}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="../../../../Documents/appsettings.json">
+    <Files>
+      <File FileName="Startup.cs" Line="36" Column="37" />
+      <File FileName="../../../../Documents/appsettings.json" Line="11" Column="142" />
+      <File FileName="../../../../Documents/appsettings.Development.json" Line="10" Column="143" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="server" expanded="True">
+            <Node name="server" expanded="True">
+              <Node name="Dependencies" expanded="True">
+                <Node name="PackageDependencies" expanded="True" />
+              </Node>
+              <Node name="appsettings.json" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.server PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
