@@ -23,7 +23,9 @@
     "redux-actions": "^2.6.5",
     "redux-logger": "^3.0.6",
     "redux-promise": "^0.6.0",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "victory": "^32.2.3",
+    "victory-native": "^32.0.2"
   },
   "devDependencies": {
     "@react-native-community/eslint-config": "^0.0.5",
