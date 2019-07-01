@@ -1,27 +1,23 @@
 ﻿<Properties StartupConfiguration="{4676EC17-E151-422F-B97A-D0831DB60439}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Controllers/CuttersController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Services/CutterService.cs">
     <Files>
-      <File FileName="Entities/Cutter.cs" Line="9" Column="1" />
-      <File FileName="Controllers/CuttersController.cs" Line="57" Column="60" />
-      <File FileName="Startup.cs" />
-      <File FileName="Dtos/CutterDto.cs" Line="3" Column="24" NotebookId="1" />
-      <File FileName="appsettings.json" NotebookId="1" />
-      <File FileName="appsettings.Development.json" NotebookId="1" />
-      <File FileName="Services/CutterService.cs" Line="40" Column="23" NotebookId="1" />
+      <File FileName="Controllers/CuttersController.cs" Line="65" Column="1" />
+      <File FileName="Entities/Tools.cs" />
+      <File FileName="Services/CutterService.cs" Line="107" Column="1" NotebookId="1" />
       <File FileName="Helpers/DataContext.cs" NotebookId="1" />
+      <File FileName="Startup.cs" NotebookId="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="server" expanded="True">
             <Node name="server" expanded="True">
-              <Node name="Controllers" expanded="True">
-                <Node name="CuttersController.cs" selected="True" />
-              </Node>
-              <Node name="Dtos" expanded="True" />
+              <Node name="Controllers" expanded="True" />
               <Node name="Entities" expanded="True" />
-              <Node name="Helpers" expanded="True" />
-              <Node name="Services" expanded="True" />
+              <Node name="Properties" expanded="True" />
+              <Node name="Services" expanded="True">
+                <Node name="CutterService.cs" selected="True" />
+              </Node>
             </Node>
           </Node>
         </State>
@@ -32,9 +28,7 @@
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/stephanjensen/sandbox/statistics/server/Services/CutterService.cs" relfile="Services/CutterService.cs" line="42" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>

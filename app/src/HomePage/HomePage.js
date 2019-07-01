@@ -1,11 +1,10 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import { Link } from '../routing';
-/*import {AsyncStorage} from 'react-native';*/
+import { View, Text, StyleSheet } from 'react-native';
 import { connect } from 'react-redux';
-import { history } from '../history';
-import { userActions } from '../_actions';
+import { toolActions } from '../_actions';
 import { VictoryBar, VictoryChart, VictoryTheme } from '../victory';
+import moment from 'moment'
+import { MachineInfo } from '../MachineInfo';
 
 const data = [
   { quarter: 1, earnings: 13000 },
@@ -16,15 +15,44 @@ const data = [
 
 class HomePage extends React.Component {
 
-    componentDidMount() {
+    constructor(props) {
+        super(props);
 
+        this.state = {
+            startDate: moment().format("YYYY-MM-DD HH:mm"),
+            endDate: moment().format("YYYY-MM-DD HH:mm"),
+        };
     }
 
+    componentDidMount() {
+    }
+
+    componentWillReceiveProps(nextProps){
+        if(this.props.dates.dates !== nextProps.dates.dates){
+            this.setState({
+                startDate: moment(nextProps.dates.dates.startDate).format("YYYY-MM-DD HH:mm"),
+                endDate: moment(nextProps.dates.dates.endDate).format("YYYY-MM-DD HH:mm"),
+            },
+            function () {
+                this.props.dispatch(toolActions.getToolInfo(this.state.startDate, this.state.endDate));
+            });
+        }
+    }
+
+
 	render() {
-	const { user, users } = this.props;
+	const { tools } = this.props;
 	return (
         <View style={ styles.container }>
-            <Text>Så jeg sku inde!!!</Text>
+            <View style={ styles.machineInfoContainer} >
+				<Text>TEST MachineInfo</Text>
+                {tools.loading &&
+					    <Text>Loading...Loading...</Text>
+				}
+                {tools.items &&
+			        <MachineInfo items={tools.items} />
+				}
+            </View>
             <VictoryChart width={350} theme={VictoryTheme.material}>
                 <VictoryBar data={data} x="quarter" y="earnings" />
             </VictoryChart>
@@ -34,20 +62,27 @@ class HomePage extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#f5fcff"
-  },
+	container: {
+		paddingVertical: 20,
+		width: "100%",
+		height: "100%"
+	},
+	machineInfoContainer: {
+	    marginBottom: 10
+
+	},
+	item: {
+		padding: 10,
+		fontSize: 18,
+		height: 44,
+	},
 });
 
 function mapStateToProps(state) {
-    const { users, authentication } = state;
-    const { user } = authentication;
+    const { tools, dates } = state;
     return {
-        user,
-        users
+        tools,
+        dates
     };
 }
 

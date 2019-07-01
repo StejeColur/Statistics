@@ -57,5 +57,12 @@ namespace server.Controllers
             var cutterDto = _mapper.Map<CutterDto>(cutter);
             return Ok(cutterDto);
         }
+
+        [HttpGet("/getMachineInfo")]
+        public IActionResult GetMachineInfo(string start, string end)
+        {
+            var cutter = _cutterService.GetMachineInfo(start, end);
+            return Ok(cutter);
+        }
     }
 }

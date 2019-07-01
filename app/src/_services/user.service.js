@@ -42,7 +42,7 @@ function getAll() {
         headers: authHeader()
     };
 
-    return fetch(`${url}/users`, requestOptions).then(handleResponse);
+    return fetch(`${url}/test`, requestOptions).then(handleResponse);
 }
 
 function getById(id) {

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { TextInput, Button, View, StyleSheet } from 'react-native';
 import { connect } from 'react-redux';
 import { userActions } from '../_actions';
-import { Link } from '../routing';
+/*import { Link } from '../routing';*/
 
 class LoginPage extends Component {
     constructor(props) {
@@ -11,7 +11,7 @@ class LoginPage extends Component {
         this.state = {
             username: '',
             password: '',
-            submitted: false
+            /*submitted: false*/
         };
     }
 
@@ -30,7 +30,7 @@ class LoginPage extends Component {
     handleSubmit(e) {
         e.preventDefault();
 
-        this.setState({ submitted: true });
+        /*this.setState({ submitted: true });*/
         const { username, password } = this.state;
         const { dispatch } = this.props;
         if (username && password) { dispatch(userActions.login(username, password));
@@ -39,7 +39,7 @@ class LoginPage extends Component {
 
 	render() {
 	    const { loggingIn } = this.props;
-        const { username, password, submitted } = this.state;
+        const { username, password } = this.state;
 	    return (
             <View style={ styles.container }>
                 <View>
